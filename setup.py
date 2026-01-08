@@ -30,7 +30,6 @@ with open(os.path.join(here, 'README.rst')) as fp:
 
 classifiers = [
     'Development Status :: 4 - Beta',
-    'License :: OSI Approved :: MIT License',
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
@@ -68,7 +67,6 @@ setup(
     author_email='ffk2005@gmail.com',
     url='https://github.com/tell-k/sphinxjp.themes.basicstrap',
     license='MIT',
-    namespace_packages=['sphinxjp', 'sphinxjp.themes'],
     packages=find_packages('src', exclude=['tests']),
     package_dir={'': 'src'},
     setup_requires=setup_requires,
