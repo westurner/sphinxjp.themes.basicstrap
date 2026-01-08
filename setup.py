@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 import re
 import os
-
-from setuptools import setup, find_packages
-
+import sys
+from setuptools import setup, find_packages, Command
 
 here = os.path.dirname(__file__)
 
@@ -17,9 +16,7 @@ install_requires = [
     'Sphinx',
 ]
 
-setup_requires = [
-    "pytest-runner"
-]
+setup_requires = []
 
 tests_require = [
     'pytest-cov',
@@ -48,6 +45,18 @@ classifiers = [
     'Topic :: Text Processing :: Markup',
 ]
 
+class PyTest(Command):
+    user_options = []
+    def initialize_options(self):
+        pass
+    def finalize_options(self):
+        pass
+    def run(self):
+        import subprocess
+        print("Running tests with pytest...")
+        errno = subprocess.call([sys.executable, '-m', 'pytest'])
+        raise SystemExit(errno)
+
 setup(
     name='sphinxjp.themes.basicstrap',
     version=version,
@@ -64,7 +73,10 @@ setup(
     package_dir={'': 'src'},
     setup_requires=setup_requires,
     install_requires=install_requires,
-    tests_require=tests_require,
+    extras_require={
+        'test': tests_require,
+    },
+    cmdclass={'test': PyTest},
     include_package_data=True,
     entry_points={
         'sphinx.html_themes': [
