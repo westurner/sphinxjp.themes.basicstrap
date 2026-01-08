@@ -126,10 +126,11 @@
   };
 </script>
 {%- for scriptfile in script_files %}
-    {%- if scriptfile == '_static/jquery.js' %}
+    {%- set scriptfile_url = scriptfile.filename|default(scriptfile) %}
+    {%- if scriptfile_url == '_static/jquery.js' %}
     <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
     {%- else %}
-    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto(scriptfile_url, 1) }}"></script>
     {%- endif %}
 {%- endfor %}
 <script type="text/javascript" src="{{ pathto('_static/js/jquery.cookie.min.js', 1) }}"></script>
@@ -171,10 +172,11 @@
   }
 </style>
 {% endif %}
-<link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+{% set style_path = style|default('css/basicstrap.css') %}
+<link rel="stylesheet" href="{{ pathto('_static/' + style_path, 1) }}" type="text/css" />
 <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 {%- for cssfile in css_files %}
-<link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto(cssfile.filename|default(cssfile), 1) }}" type="text/css" />
 {%- endfor %}
 {%- if (not theme_noresponsive|tobool) and theme_bootstrap_version == "2" %}
 <link rel="stylesheet" href="{{ pathto('_static/css/bootstrap2/bootstrap-responsive.min.css', 1) }}" type="text/css" />

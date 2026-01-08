@@ -55,5 +55,6 @@ Contents
     options
     design
     sample
+    customization
     history
 

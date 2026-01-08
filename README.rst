@@ -55,6 +55,8 @@ See the LICENSE file for specific terms.
 Authors
 =======
 
+.. start-authors
+
 Sphinx template, css, packaging
 -------------------------------
 * tell-k <ffk2005 at gmail.com>
@@ -71,21 +73,31 @@ Great thanks!
 History
 =======
 
-0.5.0(May 6, 2019)
+0.6.0 (Jan 8, 2026)
+---------------------
+
+* Fix ``'style' variable undefined`` error for Sphinx >= 7.x
+* Fix deprecated 'css_files' and 'script_files' backwards-compability; it's
+  ``cssfile.filename`` and ``scriptfile.filename``
+  for Sphinx >= 9.0.
+* Fix setup.py and setup.cfg: build-base -> build_base, add
+  PytestCommand
+
+0.5.0 (May 6, 2019)
 ---------------------
 
 * `Fix deprecated app.info warning, removed in Sphinx 2.x <https://github.com/tell-k/sphinxjp.themes.basicstrap/pull/25>`_ 
 * Drop support Python2.6, Python2.7, Python3.3
 * Fix pytest integration.
 
-0.4.3(May 7, 2015)
+0.4.3 (May 7, 2015)
 ---------------------
 * `#19 ENH: Add id=content-wrapper to content column div for CSS. <https://github.com/tell-k/sphinxjp.themes.basicstrap/issues/19>`_
 * Update Bootstrap ver3.3.4
 * Update Font Awesome ver4.3.0
 * Update jQuery ver1.11.1
 
-0.4.2(Feb 16, 2015)
+0.4.2 (Feb 16, 2015)
 ---------------------
 
 * `#18 Header search box. <https://github.com/tell-k/sphinxjp.themes.basicstrap/issues/18>`_
@@ -96,12 +108,12 @@ History
 * Fixed bug `#13 Invalid body css. <https://github.com/tell-k/sphinxjp.themes.basicstrap/pull/13>`_ Thanks to 3rdarm.
 * Support wheel format.
 
-0.4.1(Sep 29, 2014)
+0.4.1 (Sep 29, 2014)
 ---------------------
 
 * Fixed bug `#11 Font Icon does not appear.  <https://github.com/tell-k/sphinxjp.themes.basicstrap/issues/11>`_.
 
-0.4.0(Sep 29, 2014)
+0.4.0 (Sep 29, 2014)
 ---------------------
 
 * `#8 Navbar hides initial content when jumping to in-page anchor <https://github.com/tell-k/sphinxjp.themes.basicstrap/pull/8>`_.
@@ -118,18 +130,18 @@ History
 * Remove bootstrap.py and buildout.cfg
 * Starting Travis CI and Coveralls.
 
-0.3.2(Dec 31, 2013)
+0.3.2 (Dec 31, 2013)
 ---------------------
 
 * Add tox test.
 * Python3 support.
 
-0.3.1(Nov 4, 2013)
+0.3.1 (Nov 4, 2013)
 ---------------------
 * Update stylesheet for 'h1_size' - 'h6_size' options.
 * Changed. When you visit in the smartphone, GoogleWeb fonts to not used.
 
-0.3.0(Jun 28, 2013)
+0.3.0 (Jun 28, 2013)
 ---------------------
 * Fixed bug `#5 "Goolgle Web Font" is not reflected <https://github.com/tell-k/sphinxjp.themes.basicstrap/issues/5>`_.
 * Update Twitter Bootstrap ver2.3.2
@@ -139,7 +151,7 @@ History
 * Add new Innner Theme `geo-bootstrap <http://divshot.github.io/geo-bootstrap/>`_.
 * Add new option of html_theme_optios. 'h1_size' - 'h6_size'.
 
-0.2.0(Feb 11, 2013)
+0.2.0 (Feb 11, 2013)
 ---------------------
 * Fixed bug `#1 "Quick Search" in the table of contents is missing <https://github.com/tell-k/sphinxjp.themes.basicstrap/issues/1>`_.
 * `#2 adding "navbar-inverse" option <https://github.com/tell-k/sphinxjp.themes.basicstrap/issues/4>`_.

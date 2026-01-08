@@ -2,5 +2,6 @@
  History and Authors
 =====================
 
-.. include:: ../src/HISTORY.txt
-.. include:: ../src/AUTHORS.txt
+.. include:: ../README.rst
+   :start-after: .. start-authors
+   :end-before: .. |travis|
